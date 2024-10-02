@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -43,11 +44,13 @@ class PostController extends Controller
         $request->image->move(public_path('images'), $imageName);
 
         // Create the post with the image path
-        $post = Post::create([
-            'title' => $request->input('title'),
-            'content' => $request->input('content'),
-            'image' => $imageName,
-        ]);
+        $post = new Post();
+        $post->title = $request->get('title');
+        $post->content = $request->get('content');
+        $post->slug = Str::slug($request->get('title'),'-');
+        $post->image = $request->get('image');
+        $post->user_id = 1;
+        $post->save();
 
         return redirect()->route('posts.index')->with('success',  
  'The post was created successfully!');
