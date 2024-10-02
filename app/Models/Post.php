@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
@@ -12,7 +13,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'image'
+        'image',
+        'status'
     ];
 
     public function user()
