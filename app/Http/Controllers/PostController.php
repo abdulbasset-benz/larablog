@@ -39,16 +39,17 @@ class PostController extends Controller
             'image' => 'required|image|max:2048', // Validate image file
         ]);
 
-        // Handle image upload
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
+        if($request->hasFile('image')) {
+            $imageName = $request->file('image')->store('images', 'public');
+            $validated['image'] = $imageName;
+        };
 
         // Create the post with the image path
         $post = new Post();
         $post->title = $request->get('title');
         $post->content = $request->get('content');
         $post->slug = Str::slug($request->get('title'),'-');
-        $post->image = $request->get('image');
+        $post->$imageName;
         $post->user_id = 1;
         $post->save();
 
