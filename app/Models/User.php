@@ -14,7 +14,6 @@ class User extends Model
         'name',
         'email',
         'password',
-        'role'
     ];
 
     public function posts()
