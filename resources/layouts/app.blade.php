@@ -33,11 +33,6 @@
         <!-- Page Content -->
         <div>
             {{ $slot }}
-
-
-
-
-
         </div>
     </div>
 </body>
