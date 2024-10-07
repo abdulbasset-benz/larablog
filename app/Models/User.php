@@ -18,16 +18,16 @@ class User extends Model
 
     public function posts()
     {
-        return $this->hasMany(Post::class,'user_id');
+        return $this->hasMany(Post::class);
     }
 
     public function comments()
     {
-        return $this->hasMany(Comment::class, 'user_id');
+        return $this->hasMany(Comment::class);
     }
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class,  'role_user', 'user_id', 'role_id');
+        return $this->belongsTo(Role::class);
     }
 }
