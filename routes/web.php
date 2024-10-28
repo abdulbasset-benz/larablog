@@ -15,6 +15,7 @@ Route::get('/dashboard', function () {
 // basic routing for CRUD operations
 Route::prefix('posts')->group(function(){
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
+    Route::get('/about', [PostController::class, 'about'])->name('posts.about');
     Route::get('/create', [PostController::class , 'create'])->name('posts.create');
     Route::post('/store', [PostController::class, 'store'])->name('posts.store');
     Route::get('/show/{post}', [PostController::class, 'show'])->name('posts.show');
@@ -22,7 +23,6 @@ Route::prefix('posts')->group(function(){
     Route::get('/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
     Route::delete('/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
-
 
 // middlware routing
 Route::middleware('auth')->group(function () {
