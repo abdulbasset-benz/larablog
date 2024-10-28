@@ -1,33 +1,37 @@
-<!-- resources/views/blog/index.blade.php -->
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Index</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-6">Blog Posts</h1>
-
-        @if ($posts->count())
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach ($posts as $post)
-                    <div class="bg-white shadow-md rounded-lg p-4">
-                        <h2 class="text-xl font-semibold mb-2">{{ $post->title }}</h2>
-                        <p class="text-gray-700">{{ Str::limit($post->content, 100) }}</p>
-                        <p class="text-sm text-gray-500 mt-2">Published: {{ $post->created_at->format('M d, Y') }}</p>
-                    </div>
-                @endforeach
+<body>
+    <header class="relative mb-24">
+        <nav class="flex justify-between items-center px-5 pt-5 fixed top-0 right-0 left-0 m-auto ">
+            <div >
+                <a class="bg-red-600 py-5 px-10 rounded-md" href="{{ route('posts.index') }}">
+                    <span class="font-bold uppercase text-white">Lara-</span>
+                    <span class="font-bold uppercase text-green-400">DZ</span>
+                    
+                </a>
             </div>
-        @else
-            <p>No blog posts found.</p>
-        @endif
-    </div>
+            <div>
+                <ul class="flex gap-20 capitalize">
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.index') }}">home</a></li>
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.create')}}">Create a post</a></li>
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.about')}}">about</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <button class="uppercase bg-teal-600 text-white font-bold px-8 py-3 rounded-md hover:bg-teal-500" type="submit">log in</button>
+                <button class="uppercase text-black border-2 border-teal-600 font-bold px-8 py-2.5 rounded-md hover:text-white hover:bg-teal-600" type="submit">sign up</button>      
+            </div>
+            
+        </nav>
+    </header>
 </body>
 
 </html>
