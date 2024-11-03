@@ -17,6 +17,7 @@ Route::prefix('posts')->group(function(){
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
     Route::get('/about', [PostController::class, 'about'])->name('posts.about');
     Route::get('/create', [PostController::class , 'create'])->name('posts.create');
+    Route::get('/showPosts', [PostController::class, 'showPosts'])->name('posts.showPosts');
     Route::post('/store', [PostController::class, 'store'])->name('posts.store');
     Route::get('/show/{post}', [PostController::class, 'show'])->name('posts.show');
     Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
