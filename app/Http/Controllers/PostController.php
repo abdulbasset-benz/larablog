@@ -15,13 +15,17 @@ class PostController extends Controller
      */
     public function index() : View
     {
+        return view('posts.index');
+    }
+
+    public function showPosts(){
         $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        
+        return view('posts.showPosts', compact('posts'));
     }
 
     public function about() : View
     {
-        
         return view('posts.about');
     }
 
