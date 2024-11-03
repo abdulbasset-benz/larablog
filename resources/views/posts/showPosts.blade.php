@@ -12,7 +12,7 @@
                     <div class="bg-white shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-2xl">
                         <h2 class="text-2xl font-semibold text-gray-800 mb-2">{{ $post->title }}</h2>
                         <p class="text-gray-600">{{ Str::limit($post->content, 150) }}</p> <!-- Limits to 150 characters -->
-                        <a href="{{ route('posts.show', $post->id) }}" class="mt-4 inline-block text-blue-500 hover:text-blue-600 font-semibold">Read more</a>
+                        <a href="{{ route('posts.show', $post->id) }}" class="mt-5 bg-violet-500 text-white px-5 py-2 rounded-md inline-block hover:bg-violet-600 font-semibold">Read more</a>
                     </div>
                 @endforeach
             </div>
