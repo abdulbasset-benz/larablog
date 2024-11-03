@@ -18,10 +18,11 @@
                 </a>
             </div>
             <div>
-                <ul class="flex gap-20 capitalize">
+                <ul class="flex gap-10 capitalize">
                     <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.index') }}">home</a></li>
-                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.create')}}">Create a post</a></li>
-                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.about')}}">about</a></li>
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.create') }}">Create a post</a></li>
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.showPosts') }}">Posts</a></li>
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.about') }}">about</a></li>
                 </ul>
             </div>
             
