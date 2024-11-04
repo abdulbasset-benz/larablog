@@ -27,8 +27,13 @@
             </div>
             
             <div>
-                <button class="uppercase bg-teal-600 text-white font-bold px-8 py-3 rounded-md hover:bg-teal-500" type="button">log in</button>
-                <button class="uppercase text-black border-2 border-teal-600 font-bold px-8 py-2.5 rounded-md hover:text-white hover:bg-teal-600" type="button">sign up</button>      
+                <a href="{{ route('login') }}">
+                    <button class="uppercase bg-teal-600 text-white font-bold px-8 py-3 rounded-md hover:bg-teal-500" type="button">log in</button>
+                </a>
+                <a href="{{ route('register')}}">
+                    <button class="uppercase text-black border-2 border-teal-600 font-bold px-8 py-2.5 rounded-md hover:text-white hover:bg-teal-600" type="button">sign up</button>
+                </a>
+                      
             </div>
             
         </nav>
