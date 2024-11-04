@@ -46,14 +46,13 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required|image|max:2048', // Validate image file
+            'image' => 'nullable|image|max:2048', // Validate image file
         ]);
 
         if($request->hasFile('image')) {
             $imageName = $request->file('image')->store('images', 'public');
             $validated['image'] = $imageName;
         };
-
         // Create the post with the image path
         $post = new Post();
         $post->title = $request->get('title');
@@ -99,6 +98,11 @@ class PostController extends Controller
             'content' => 'required',
         ]);
 
+        $data = [
+            'title' => $request->input('title'),
+            'content' => $request->input('content')   
+        ];
+
         // Handle image update if a new image is uploaded
         if ($request->hasFile('image')) {
             // Delete the old image if it exists
@@ -111,22 +115,11 @@ class PostController extends Controller
             $request->image->move(public_path('images'), $imageName);
 
             // Update the post with the new image path
-            $post->update([
-                'title' => $request->input('title'),
-                'content' => $request->input('content'),
-                'image' => $imageName,
-            ]);
-        } else {
-            // Update the post without changing the image
-            $post->update([
-                'title' => $request->input('title'),
-                'content' => $request->input('content'),
-            ]);
-        }
+            $post->update($data);
 
         return redirect()->route('posts.index', $post)->with('success', 'Post updated successfully');
     }
-
+}
     /**
      * Remove the specified resource from storage.
      */
