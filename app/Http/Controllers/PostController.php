@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index() : View
     {
-        return view('posts.welcome');
+        return view('posts.index');
     }
 
     public function showPosts(){
