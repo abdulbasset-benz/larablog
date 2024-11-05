@@ -4,9 +4,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PostController::class, 'index'])->name('posts.welcome');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -14,7 +13,6 @@ Route::get('/dashboard', function () {
 
 // basic routing for CRUD operations
 Route::prefix('posts')->group(function(){
-    Route::get('/', [PostController::class, 'index'])->name('posts.index');
     Route::get('/about', [PostController::class, 'about'])->name('posts.about');
     Route::get('/create', [PostController::class , 'create'])->name('posts.create');
     Route::get('/showPosts', [PostController::class, 'showPosts'])->name('posts.showPosts');

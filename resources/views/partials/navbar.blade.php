@@ -11,7 +11,7 @@
     <header class="sticky top-0 w-full bg-white shadow-md">
         <nav class="flex items-center justify-between max-w-6xl mx-auto p-4">
             <div >
-                <a class="bg-red-600 py-5 px-10 rounded-md" href="{{ route('posts.index') }}">
+                <a class="bg-red-600 py-5 px-10 rounded-md" href="{{ route('posts.welcome') }}">
                     <span class="font-bold uppercase text-white">Lara-</span>
                     <span class="font-bold uppercase text-green-400">DZ</span>
                     
@@ -19,7 +19,7 @@
             </div>
             <div>
                 <ul class="flex gap-10 capitalize">
-                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.index') }}">home</a></li>
+                    <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.welcome') }}">home</a></li>
                     <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.create') }}">Create a post</a></li>
                     <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.showPosts') }}">Posts</a></li>
                     <li><a class="hover:text-teal-600 font-semibold text-lg" href="{{ route('posts.about') }}">about</a></li>
