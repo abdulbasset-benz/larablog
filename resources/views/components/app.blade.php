@@ -20,11 +20,11 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
-        @include('partials.navbar')
+        <x-navigation-bar />
 
 
         <main>
-            @yield('content')
+            {{ $slot }}
         </main>
     </div>
 </body>

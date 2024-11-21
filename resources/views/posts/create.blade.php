@@ -1,6 +1,6 @@
 @vite('resources/css/app.css')
 
-@extends('layouts.app')
+<x-app></x-app>
 
 
 @section('content')

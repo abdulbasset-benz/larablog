@@ -1,11 +1,4 @@
-@vite('resources/css/app.css')
-
-@extends('layouts.app')
-
-
-@section('content')
-
-<x-app-layout>
+<x-components.app-Layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
@@ -19,27 +12,8 @@
                     {{ __("You're logged in!") }}
 
                     <h1>hello worl</h1>
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-                    <h1>hello worl</h1>
-
-
-
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
-@endsection
+</x-components.app-Layout>
